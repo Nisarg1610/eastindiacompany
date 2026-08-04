@@ -40,7 +40,7 @@ export default function Navbar() {
 
         <Link href="/" className="shrink-0 flex items-center py-1">
           <Image
-            src="/logocut.jpeg"
+            src="/logocut.jpg"
             alt="East India Company"
             width={460}
             height={257}
