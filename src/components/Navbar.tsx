@@ -32,15 +32,15 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isDarkBg
-          ? 'bg-ink/90 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]'
-          : 'bg-transparent pt-4'
+        ? 'bg-ink/90 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]'
+        : 'bg-transparent pt-4'
         }`}
     >
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-12' : 'h-14'}`}>
 
         <Link href="/" className="shrink-0 flex items-center py-1">
           <Image
-            src="/logo.png"
+            src="/logocut.jpeg"
             alt="East India Company"
             width={460}
             height={257}
@@ -56,8 +56,8 @@ export default function Navbar() {
               key={href}
               href={href}
               className={`text-sm font-medium transition-all duration-200 ${isDarkBg
-                  ? 'text-cream/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
-                  : 'text-gray-800 hover:text-black hover:drop-shadow-[0_0_8px_rgba(0,0,0,0.2)]'
+                ? 'text-cream/80 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
+                : 'text-gray-800 hover:text-black hover:drop-shadow-[0_0_8px_rgba(0,0,0,0.2)]'
                 }`}
             >
               {label}
