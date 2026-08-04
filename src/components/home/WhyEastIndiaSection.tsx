@@ -82,15 +82,11 @@ function ThreeBackground() {
           <bufferGeometry>
             <bufferAttribute
               attach="attributes-position"
-              count={positions.length / 3}
-              array={positions}
-              itemSize={3}
+              args={[positions, 3]}
             />
             <bufferAttribute
               attach="attributes-color"
-              count={colors.length / 3}
-              array={colors}
-              itemSize={3}
+              args={[colors, 3]}
             />
           </bufferGeometry>
           <pointsMaterial
@@ -192,23 +188,13 @@ export default function WhyEastIndiaSection() {
 
       {/* --- Sticky 3D Background --- */}
       {/* Absolute fill within the section, acts as a backdrop */}
-      <div className="absolute inset-0 pointer-events-none z-0 bg-[#1a1208]">
-        <div className="sticky top-0 h-screen w-full overflow-hidden">
-          <Image
-            src="/whyus.jpeg"
-            alt="Why East India Company Background"
-            fill
-            className="object-cover opacity-30 object-center mix-blend-luminosity"
-            quality={100}
-          />
-          <div className="absolute inset-0">
-            <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-              <ThreeBackground />
-            </Canvas>
-          </div>
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="sticky top-0 h-screen w-full">
+          <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+            <ThreeBackground />
+          </Canvas>
           {/* Subtle gradient vignette to fade out the edges into the dark background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1208] via-[#1a1208]/70 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a1208] via-transparent to-[#1a1208]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1208] via-[#1a1208]/60 to-[#1a1208]/20 opacity-90" />
         </div>
       </div>
 
