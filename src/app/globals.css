@@ -152,8 +152,9 @@ h6 {
 }
 
 .bg-hero-gradient {
-  background: linear-gradient(145deg, #1A1208 0%, #3D2814 50%, #5C3A1E 100%);
+  background: linear-gradient(150deg, #120A1C 0%, #26123A 50%, #3D1E5C 100%);
 }
+
 
 .bg-section-spice {
   background: linear-gradient(135deg, #1A1208 0%, #3D2814 50%, #5C3A1E 100%);
