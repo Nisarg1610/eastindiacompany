@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
+
 const navLinks = [
-  { href: '/',         label: 'Home' },
-  { href: '/about',    label: 'About' },
-  { href: '/contact',  label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Footer() {

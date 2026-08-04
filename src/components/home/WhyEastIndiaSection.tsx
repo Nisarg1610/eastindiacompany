@@ -278,6 +278,13 @@ export default function WhyEastIndiaSection() {
         </div>
 
       </div>
+      <div
+        className="absolute inset-x-0 bottom-0 h-16 sm:h-24 pointer-events-none z-20"
+        style={{
+          background: '#FDFBF7',
+          clipPath: 'polygon(0% 100%, 100% 55%, 100% 100%, 0% 100%)',
+        }}
+      />
     </section>
   );
 }
