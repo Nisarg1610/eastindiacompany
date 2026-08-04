@@ -1,26 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
 @import "tailwindcss";
 
+/* Enables `dark:` variants driven by a .dark class on <html> (set by next-themes) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-saffron: #FF5E0E;
+  --color-saffron-light: #FF8F50;
+  --color-saffron-dark: #CC4400;
+  --color-turmeric: #FFDF00;
+  --color-coral: #FF2E63;
+  --color-cardamom: #8A2BE2;
+  --color-ink: #0B0E14;
+  --color-charcoal: #151922;
+  --color-stone: #3A3F4A;
+  --color-cream: #FFFBF5;
+  --color-parchment: #FFF3E0;
+  --color-linen: #F5E6D3;
+  --color-spice-red: #D4382A;
+  --color-leaf: #2D8B4E;
+  --color-leaf-light: #4CAF6E;
+
+  /* Semantic tokens — components should use these for anything that flips between themes */
+  --color-bg: var(--color-cream);
+  --color-bg-alt: var(--color-linen);
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-stone);
+  --color-border: #e8ddd0;
+  --color-card: #ffffff;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-script: 'Great Vibes', cursive;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --color-bg: #0B0E14;
+  --color-bg-alt: #151922;
+  --color-text: #F5E6D3;
+  --color-text-muted: #A8A0B0;
+  --color-border: #2a2f3a;
+  --color-card: #151922;
+
+  --color-saffron: #FF7A33;
+  --color-saffron-light: #FFA366;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-saffron: var(--color-saffron);
+  --color-saffron-light: var(--color-saffron-light);
+  --color-saffron-dark: var(--color-saffron-dark);
+  --color-turmeric: var(--color-turmeric);
+  --color-coral: var(--color-coral);
+  --color-cardamom: var(--color-cardamom);
+  --color-ink: var(--color-ink);
+  --color-charcoal: var(--color-charcoal);
+  --color-stone: var(--color-stone);
+  --color-cream: var(--color-cream);
+  --color-parchment: var(--color-parchment);
+  --color-linen: var(--color-linen);
+  --color-spice-red: var(--color-spice-red);
+  --color-leaf: var(--color-leaf);
+  --color-leaf-light: var(--color-leaf-light);
+
+  --color-bg: var(--color-bg);
+  --color-bg-alt: var(--color-bg-alt);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-border: var(--color-border);
+  --color-card: var(--color-card);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-script: 'Great Vibes', cursive;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+}
+
+.bg-section-spice h1,
+.bg-section-spice h2,
+.bg-section-spice h3,
+.bg-section-spice h4 {
+  color: var(--color-cream);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(6deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 7s ease-in-out 1.5s infinite;
+}
+
+.animate-float-slow {
+  animation: float 9s ease-in-out 0.8s infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.text-gradient-spice {
+  background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-coral) 50%, var(--color-turmeric) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(145deg, #1A1208 0%, #3D2814 50%, #5C3A1E 100%);
+}
+
+.bg-section-spice {
+  background: linear-gradient(135deg, #1A1208 0%, #3D2814 50%, #5C3A1E 100%);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.splash-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 10s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.hero-blob {
+  border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
 }
