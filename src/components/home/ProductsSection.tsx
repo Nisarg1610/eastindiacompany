@@ -78,12 +78,12 @@ export default function ProductsSection() {
       // 3D Scroll Effect on Cards
       cardsRef.current.forEach((card, i) => {
         if (!card) return;
-        
+
         gsap.fromTo(
           card,
-          { 
-            opacity: 0, 
-            y: 150, 
+          {
+            opacity: 0,
+            y: 150,
             z: -500,       // Pushed deep into the screen
             rotateX: -45,  // Tilted backward
           },
@@ -108,9 +108,11 @@ export default function ProductsSection() {
 
   return (
     <section ref={sectionRef} className="py-24 sm:py-32 bg-[#FDFBF7] relative overflow-hidden" style={{ perspective: '1200px' }}>
-      
+
+
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-saffron/5 rounded-full blur-[100px]" />
         <div className="absolute bottom-40 -left-40 w-96 h-96 bg-cardamom/5 rounded-full blur-[100px]" />
         <div
@@ -125,7 +127,7 @@ export default function ProductsSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        
+
         {/* Section Header */}
         <div ref={headerRef} className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
           <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.22em] uppercase text-saffron mb-4">
@@ -133,11 +135,11 @@ export default function ProductsSection() {
             Our Catalog
             <span className="w-6 h-px bg-saffron" />
           </span>
-          <h2 
+          <h2
             className="text-4xl sm:text-5xl lg:text-[4rem] font-bold text-ink mb-6 leading-tight"
             style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
           >
-            Explore the <br className="hidden lg:block"/>
+            Explore the <br className="hidden lg:block" />
             <span className="italic text-saffron">Collection</span>
           </h2>
           <p className="text-stone text-lg leading-relaxed">
@@ -148,13 +150,13 @@ export default function ProductsSection() {
         {/* 3D Animated Grid (Swipeable Carousel on Mobile) */}
         <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:overflow-visible md:snap-none md:pb-0 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {products.map((product, i) => (
-            <div 
-              key={product.title} 
+            <div
+              key={product.title}
               ref={(el) => { cardsRef.current[i] = el; }}
               className="group relative h-[400px] sm:h-[450px] md:h-[500px] w-[85vw] sm:w-[60vw] md:w-full shrink-0 snap-center rounded-[2.5rem] overflow-hidden cursor-pointer shadow-xl will-change-transform"
-              style={{ 
-                transformStyle: 'preserve-3d', 
-                transformOrigin: 'top center' 
+              style={{
+                transformStyle: 'preserve-3d',
+                transformOrigin: 'top center'
               }}
             >
               {/* Image Layer */}
@@ -166,7 +168,7 @@ export default function ProductsSection() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="product-image object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
                 />
-                
+
                 {/* Gradient Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-80" />
                 <div className="absolute inset-0 bg-ink/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 backdrop-blur-[2px]" />
@@ -182,16 +184,16 @@ export default function ProductsSection() {
                 </div>
 
                 <div className="relative z-10 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] -translate-y-6 md:translate-y-0 md:group-hover:-translate-y-6">
-                  <h3 
+                  <h3
                     className="text-3xl font-bold text-white mb-2"
                     style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
                   >
                     {product.title}
                   </h3>
-                  
+
                   {/* Divider */}
                   <div className="w-full md:w-0 h-px bg-saffron transition-all duration-700 ease-out md:group-hover:w-full mb-4 opacity-100 md:opacity-0 md:group-hover:opacity-100" />
-                  
+
                   {/* Description */}
                   <div className="grid grid-rows-[1fr] md:grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr]">
                     <div className="overflow-hidden">
@@ -210,7 +212,7 @@ export default function ProductsSection() {
             </div>
           ))}
         </div>
-        
+
         {/* View All Button */}
         <div className="mt-16 sm:mt-24 text-center">
           <button className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-ink text-white font-bold tracking-widest uppercase text-xs hover:bg-saffron hover:scale-105 transition-all duration-300 shadow-xl group">

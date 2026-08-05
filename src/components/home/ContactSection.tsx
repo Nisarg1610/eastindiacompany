@@ -1,14 +1,31 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, MapPin, Phone } from 'lucide-react';
 import AnimatedReveal from './AnimatedReveal';
 
 export default function ContactSection() {
   return (
-    <section className="py-16 sm:py-24 bg-cream border-t border-linen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+    // 1. Added `relative` and removed `bg-cream`
+    <section className="relative py-16 sm:py-24 border-t border-linen">
+
+      {/* Background Image Container */}
+      <div className="absolute inset-0 pointer-events-none -z-10 select-none">
+        <Image
+          src="/texture2.jpg" /* <-- Ensure this file exists in your /public folder */
+          alt="Base Background"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
+
+      {/* 2. Added `relative z-10` to keep content above the background image */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="max-w-2xl mx-auto text-center">
+
           <AnimatedReveal>
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-4">
               Delivery, Pickup &amp; Contact
@@ -52,6 +69,7 @@ export default function ContactSection() {
               <ArrowRight size={16} />
             </Link>
           </AnimatedReveal>
+
         </div>
       </div>
     </section>

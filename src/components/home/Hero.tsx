@@ -299,14 +299,30 @@ export default function Hero() {
   );
 
   return (
-    <section ref={rootRef} className="relative min-h-screen overflow-hidden flex items-center bg-hero-gradient">
+    <section ref={rootRef} className="relative min-h-screen overflow-hidden flex items-center">
 
       {/* ── Full-spread botanical sketch background ── */}
-      <div className="absolute inset-0 pointer-events-none z-0 select-none flex items-center justify-center">
-        <div className="relative w-full h-full opacity-[0.07] dark:opacity-[0.04]">
+      {/* ── 1. NEW: Base Background Image ── */}
+      <div className="absolute inset-0 pointer-events-none -z-10 select-none">
+        <Image
+          src="/BLACK.jpg"
+          alt="Base Background"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+
+        <div className="absolute inset-0 bg-[#1a1208]/70 dark:bg-ink/80" />
+      </div>
+
+      {/* ── 2. MODIFIED: Botanical sketch overlay ── */}
+      <div className="absolute inset-0 pointer-events-none z-0 select-none flex items-center justify-center mix-blend-screen dark:mix-blend-overlay">
+        { }
+        <div className="relative w-full h-full opacity-15 dark:opacity-20">
           <Image
             src="/spice_sketches_bg.png"
-            alt=""
+            alt="Spice Sketch Overlay"
             fill
             className="object-cover object-center"
             sizes="100vw"

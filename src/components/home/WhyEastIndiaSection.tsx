@@ -184,7 +184,7 @@ export default function WhyEastIndiaSection() {
   );
 
   return (
-    <section ref={containerRef} className="relative bg-[#1a1208] pt-20 pb-24 sm:pt-32 sm:pb-32 overflow-hidden">
+    <section ref={containerRef} className="relative bg-[#1a1208] pt-20 pb-24 sm:pt-4 sm:pb-22 overflow-hidden">
 
       {/* --- Sticky 3D Background --- */}
       {/* Absolute fill within the section, acts as a backdrop */}

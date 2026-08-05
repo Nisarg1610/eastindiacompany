@@ -126,7 +126,7 @@ export default function AboutSection() {
 
       {/* ── Ambient decoration ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div ref={blobOneRef} className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-saffron/15 blur-3xl" />
+        <div ref={blobOneRef} className="absolute -left-24 w-80 rounded-full bg-saffron/15 blur-3xl" />
         <div ref={blobTwoRef} className="absolute top-1/3 -right-32 w-96 h-96 rounded-full bg-cardamom/10 blur-3xl" />
 
         <div
@@ -150,8 +150,8 @@ export default function AboutSection() {
         <FallingParticles count={10} />
       </div>
 
-      <div className="relative z-10 pb-14 sm:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row gap-16 lg:gap-24 items-start pt-16">
+      <div className="relative z-10 pb-10 sm:pb-40">
+        <div className="max-w-7xl mx-auto px-11 sm:px-10 lg:px-12 flex flex-col lg:flex-row gap-16 lg:gap-24 items-start pt-10">
 
           {/* ── Left Column: Intro Text ── */}
           <div className="lg:w-5/12 lg:sticky lg:top-32">
